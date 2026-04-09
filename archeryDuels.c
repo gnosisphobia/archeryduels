@@ -15,6 +15,7 @@ int atirarFlecha() {
     } else {
         pontosTiro = 6;
     }
+    printf("teste %d", pontosTiro);
     return pontosTiro;
 }
 
@@ -23,11 +24,12 @@ int rodadaJogador() {
     int ptsRodada = 0;
     int numFlechas = 3;
 
+
+    while (numFlechas > 0) {
     printf("=== Rodada do jogador ===\n");
     printf("Escolha sua acao:\n1. Atirar\n2. Encerrar turno\n");
     scanf("%d", &escolhaDoJogador);
 
-    while (numFlechas > 0) {
         if (escolhaDoJogador == 1) {
             int ptsTiro = atirarFlecha();
         
@@ -39,10 +41,8 @@ int rodadaJogador() {
                 numFlechas --;
             } else {
                 ptsRodada += ptsTiro;
-                numFlechas ++;
             }
 
-            escolhaDoJogador = 0;
         }
     } return ptsRodada;
 } 
